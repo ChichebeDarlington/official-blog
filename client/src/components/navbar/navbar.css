@@ -1,0 +1,65 @@
+.navbar {
+  background-color: var(--the-storm-2);
+  position: sticky;
+  width: 100%;
+  height: 50px;
+  top: 0;
+  display: flex;
+  align-items: center;
+  z-index: 3;
+}
+
+.left {
+  flex: 3;
+  color: var(--candy-1);
+}
+.icon {
+  margin-left: 7px;
+  cursor: pointer;
+}
+
+.center {
+  color: var(--candy-4);
+  flex: 6;
+}
+.list {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
+.list-item {
+  cursor: pointer;
+  transition: all 0.1s ease-in;
+}
+.list-item:hover {
+  font-weight: 600;
+  color: var(--candy-1);
+}
+
+.right {
+  position: relative;
+  flex: 3;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.seearch-icon {
+  position: absolute;
+  top: 10px;
+  right: 130px;
+  color: var(--candy-1);
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .seearch-icon {
+    right: 27px;
+  }
+}

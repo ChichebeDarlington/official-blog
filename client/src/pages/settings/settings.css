@@ -1,0 +1,71 @@
+.settings {
+  display: flex;
+}
+.settings-wrapper {
+  flex: 9;
+  padding: 20px;
+}
+.settings-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.settings-title-update {
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: var(--candy-4);
+}
+.settings-title-delete {
+  color: red;
+  font-size: 12px;
+  cursor: pointer;
+}
+.settings-form {
+  display: flex;
+  flex-direction: column;
+}
+.settings-profile-picture {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+.settings-profile-picture > img {
+  width: 70px;
+  height: 70px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+.settings-icon {
+  width: 25px;
+  height: 25px;
+  color: whitesmoke;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.settings-form > label {
+  font-size: 20px;
+  margin-top: 20px;
+}
+.settings-form > input {
+  color: var(--candy-4);
+  margin: 10px;
+  height: 30px;
+  border: none;
+  border-bottom: 1px solid var(--candy-1);
+}
+.settings-form > input:focus {
+  border: none;
+  outline: none;
+}
+.settings-btn {
+  width: 150px;
+  align-self: center;
+  border: none;
+  border-radius: 20px;
+  color: var(--candy-1);
+  background-color: var(--candy-3);
+  padding: 10px;
+  margin: 20px;
+  cursor: pointer;
+}

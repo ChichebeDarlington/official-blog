@@ -1,0 +1,67 @@
+:root {
+  /* Helado */
+  --helado-1: #38b4d0;
+  --helado-2: #fac7c3;
+  --helado-3: #fff7ec;
+  --helado-4: #a9e2f5;
+  /* Candy Love*/
+  --candy-1: #d1114d;
+  --candy-2: #eed5d1;
+  --candy-3: #f38592;
+  --candy-4: #d6517c;
+  /* The Storm */
+  --the-storm-1: #555a54;
+  --the-storm-2: #f7f2ef;
+  --the-storm-3: #e1ddd2;
+  --the-storm-4: #bfbbaf;
+  /* Ice Cream */
+  --ice-cream-1: #2ea1da;
+  --ice-cream-2: #f1d39d;
+  --ice-cream-3: #fcf5e5;
+  --ice-cream-4: #f8cbce;
+  /* Tropical-kiwi */
+  --tropical-kiwi-1: #3c3d42;
+  --tropical-kiwi-2: #9ccd62;
+  --tropical-kiwi-3: #f6f8e2;
+  --tropical-kiwi-4: #e0ddca;
+  /* Deep Clear Ocean */
+  --deep-clear-ocean-1: #407c87;
+  --deep-clear-ocean-2: #a5dbdd;
+  --deep-clear-ocean-3: #eef1f6;
+  --deep-clear-ocean-4: #d3e1e2;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: var(--candy-2);
+}
+.link {
+  text-decoration: none;
+  color: var(--candy-1);
+}
+.signature {
+  display: flex;
+  justify-content: space-evenly;
+}
+.list-item-signature {
+  margin: 5px;
+}
+/* Media Queries Breakpoints */
+
+@media (max-width: 600px) {
+  /* phone */
+}
+@media (max-width: 768px) {
+  /* tablet */
+}
+@media (max-width: 992px) {
+  /* laptop */
+}
+@media (max-width: 1200px) {
+  /* computer */
+}

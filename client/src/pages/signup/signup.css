@@ -1,0 +1,52 @@
+.signup {
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.1)
+    ),
+    url("/images/handsome-guy.jpg");
+  background-size: cover;
+  height: calc(100vh - 50px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.signup-title {
+  font-size: 50px;
+  text-align: center;
+}
+.signup-form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-form > label {
+  margin: 10px 0;
+}
+.signup-form > input {
+  padding: 10px;
+  background: white;
+  border: none;
+}
+.signup-btn {
+  margin-top: 20px;
+  cursor: pointer;
+  background-color: teal;
+  color: white;
+  border: none;
+  border-radius: 11px;
+  padding: 9px;
+}
+
+.signup-login-btn {
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background-color: var(--candy-3);
+  color: var(--helado-3);
+  cursor: pointer;
+  border: none;
+  padding: 8px;
+  border-radius: 11px;
+}
