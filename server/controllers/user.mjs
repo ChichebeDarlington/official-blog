@@ -1,5 +1,5 @@
 import User from "../models/user.mjs";
-import Post from "../models/posts.js";
+import Post from "../models/posts.mjs";
 import { comparePassword, hashPassword } from "../bcrypt/bAuth.mjs";
 
 export const UserUpdate = async (req, res) => {

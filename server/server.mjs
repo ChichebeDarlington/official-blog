@@ -5,7 +5,7 @@ import multer from "multer";
 import { DB } from "./database/db.mjs";
 import authRoute from "./routes/auth.mjs";
 import userRoute from "./routes/user.mjs";
-import postsRoute from "./routes/posts.js";
+import postsRoute from "./routes/posts.mjs";
 import categoryRoute from "./routes/category.mjs";
 
 const app = express();
@@ -22,9 +22,10 @@ app.use("/api/category", categoryRoute);
 
 app.get("/mazi", (req, res) => {
   console.log(" Mazi blog");
+  res.json("sent");
 });
 
-// multer
+// multer section
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, "images");
