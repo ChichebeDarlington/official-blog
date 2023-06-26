@@ -1,26 +1,29 @@
+import { Link } from "react-router-dom";
 import "./post.css";
 
-const Post = () => {
+const Post = ({ post }) => {
   return (
     <div className="post">
-      <img src="/images/post.jpg" alt="" className="post-img" />
+      {post.photo && <img src={post.photo} alt="" className="post-img" />}
       <section className="post-info">
         <div className="post-cats">
-          <span className="post-category">Music</span>
-          <span className="post-category">Life</span>
+          {post.categories.map((category, index) => {
+            return (
+              <span className="post-category" key={index}>
+                {category.name}
+              </span>
+            );
+          })}
         </div>
-        <span className="post-title">Post Title</span>
+        <Link to={`/post/${post._id}`} className="link">
+          <span className="post-title">{post.title}</span>
+        </Link>
         <hr />
-        <span className="post-date">2 months ago</span>
+        <span className="post-date">
+          {new Date(post.createAt).toDateString()}
+        </span>
       </section>
-      <p className="post-description">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, ipsa?
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium
-        hic ex reprehenderit voluptatum labore saepe vero optio harum explicabo
-        porro. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore
-        dignissimos numquam harum perspiciatis aliquam vel exercitationem omnis
-        provident nostrum dicta.
-      </p>
+      <p className="post-description">{post.description}</p>
     </div>
   );
 };

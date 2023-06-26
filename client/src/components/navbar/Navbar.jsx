@@ -7,10 +7,20 @@ import {
   FiInstagram,
   BsFillSearchHeartFill,
 } from "react-icons/all";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
+import { Context } from "../../context/Context";
+import { useContext } from "react";
 
 const Navbar = () => {
-  const user = true;
+  const { user, dispatch } = useContext(Context);
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    dispatch({ type: "LOGOUT" });
+    navigate("/login");
+  };
+
   return (
     <div className="navbar icons">
       <section className="left">
@@ -41,26 +51,17 @@ const Navbar = () => {
               Write
             </Link>
           </li>
-          <li className="list-item">
-            <Link className="link">Logout</Link>
-          </li>
         </ul>
       </section>
       <section className="right">
-        {!user ? (
-          <>
-            <img
-              src="/images/adidas-shirt.jpg"
-              alt="Nav-img"
-              className="nav-img"
-            />
-            <span>
-              <BsFillSearchHeartFill className="seearch-icon" />
-            </span>
-          </>
-        ) : (
-          <>
-            <ul className="list signature">
+        <img src={user?.profilePicture} alt="profile-img" className="nav-img" />
+        <span>
+          <BsFillSearchHeartFill className="seearch-icon" />
+        </span>
+
+        <ul className="list signature">
+          {!user ? (
+            <>
               <li className="list-item list-item-signature">
                 <Link className="link" to="signup">
                   Signup
@@ -71,9 +72,16 @@ const Navbar = () => {
                   Login
                 </Link>
               </li>
-            </ul>
-          </>
-        )}
+            </>
+          ) : (
+            <li
+              className="list-item list-item-signature"
+              onClick={handleLogout}
+            >
+              <Link className="link">Logout</Link>
+            </li>
+          )}
+        </ul>
       </section>
     </div>
   );

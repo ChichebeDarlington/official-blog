@@ -6,8 +6,24 @@ import {
   FaWhatsapp,
   FiInstagram,
 } from "react-icons/all";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
+  const [category, setCategory] = useState([]);
+
+  useEffect(() => {
+    const getCategory = async () => {
+      const { data } = await axios.get(
+        "http://localhost:8000/api/category/fetch-category"
+      );
+      setCategory(data);
+    };
+    getCategory();
+  }, []);
+
+  // console.log(category);
   return (
     <div className="sidebar">
       <section className="sidebar-item">
@@ -22,12 +38,13 @@ const Sidebar = () => {
       <section className="sidebar-item">
         <span className="sidebar-title">Categories</span>
         <ul className="sidebar-list">
-          <li className="sidebar-list-item">Music</li>
-          <li className="sidebar-list-item">Life</li>
-          <li className="sidebar-list-item">Stles</li>
-          <li className="sidebar-list-item">Sport</li>
-          <li className="sidebar-list-item">Cinema</li>
-          <li className="sidebar-list-item">Tech</li>
+          {category.map((cate, index) => {
+            return (
+              <Link to={`/?cat=${cate.name}`} className="link" key={index}>
+                <li className="sidebar-list-item">{cate.name}</li>
+              </Link>
+            );
+          })}
         </ul>
       </section>
 

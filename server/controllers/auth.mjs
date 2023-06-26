@@ -5,13 +5,13 @@ import { hashPassword, comparePassword } from "../bcrypt/bAuth.mjs";
 export const Signup = async (req, res) => {
   const { username, email, password } = req.body;
   if (!username) {
-    return res.status(301).json({ error: "Username is requires" });
+    return res.status(400).json({ error: "Username is requires" });
   }
   if (!email) {
-    return res.status(301).json({ error: "Email is requires" });
+    return res.status(400).json({ error: "Email is requires" });
   }
   if (!password) {
-    return res.status(301).json({ error: "Password is requires" });
+    return res.status(400).json({ error: "Password is requires" });
   }
   try {
     const hashed = await hashPassword(password);
@@ -21,6 +21,7 @@ export const Signup = async (req, res) => {
       password: hashed,
     });
     await user.save();
+    user.password = undefined;
     return res.status(201).json(user);
   } catch (error) {
     console.log(error);

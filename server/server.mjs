@@ -1,18 +1,19 @@
 import express from "express";
 import dotenv from "dotenv";
-import cors from "cors";
 import multer from "multer";
 import { DB } from "./database/db.mjs";
 import authRoute from "./routes/auth.mjs";
 import userRoute from "./routes/user.mjs";
 import postsRoute from "./routes/posts.mjs";
 import categoryRoute from "./routes/category.mjs";
+import cors from "cors";
 
 const app = express();
 
 dotenv.config();
 
 app.use(cors());
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use("/api/auth", authRoute);
